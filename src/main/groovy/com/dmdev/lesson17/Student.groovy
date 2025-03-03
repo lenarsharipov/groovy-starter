@@ -5,7 +5,7 @@ import groovy.transform.TupleConstructor
 
 @ToString
 @TupleConstructor // создает конструкторы со всеми комбинациями
-class Student {
+class Student implements WithId {
     String firstName
     String lastName
     Integer age

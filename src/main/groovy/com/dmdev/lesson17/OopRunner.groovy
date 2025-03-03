@@ -11,8 +11,10 @@ class OopRunner {
         println student.@firstName  // обращение к полу напрямую. Стоит избегать такое
 
         // не создавая кастомных конструкторов, мы можем инициализировать все поля
-        def student1 = new Student(firstName: "Petr", lastName: "Petrov", age: 18)
+        def student1 = new Student(firstName: "Petr", lastName: "Petrov", age: 18, id: 222)
         println student1 // com.dmdev.lesson17.Student(Petr, Petrov, 18)
+
+        student1.properties.each { println it }
 
         // принуждение - , через массив аргументов
         Student student2 = ['Sveta', 'Svetikova', 30]
@@ -22,6 +24,7 @@ class OopRunner {
         println firstName // Sveta
         println lastName // Svetikova
 
-        assert [student1, student2].collect {it.firstName } == ['Petr', 'Sveta']
+        assert [student1, student2].collect { it.firstName } == ['Petr', 'Sveta']
+
     }
 }
