@@ -13,7 +13,7 @@ import groovy.util.logging.Slf4j
 // создает конструкторы со всеми комбинациями
 @EqualsAndHashCode
 //@Canonical
-@Immutable
+//@Immutable
 @Builder
 //@Slf4j
 class Student implements WithId {
@@ -23,6 +23,22 @@ class Student implements WithId {
 
     def getAt(Integer index) {
         index == 0 ? firstName : lastName
+    }
+
+    def getInfo() {
+        Closure closure = {
+            println thisObject // == this
+            println owner
+            println delegate
+
+            Closure secondClosure = {
+                println thisObject // == this
+                println owner
+                println delegate
+            }
+            secondClosure()
+        }
+        closure
     }
 
     static void main(String[] args) {
