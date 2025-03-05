@@ -12,7 +12,7 @@ import groovy.util.logging.Slf4j
 @TupleConstructor
 // создает конструкторы со всеми комбинациями
 @EqualsAndHashCode
-//@Canonical
+@Canonical
 //@Immutable
 @Builder
 //@Slf4j
